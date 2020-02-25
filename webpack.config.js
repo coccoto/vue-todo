@@ -52,7 +52,10 @@ const rules = [
     },{
         test: /\.(sass)$/,
         use: [
-            'style-loader', 'css-loader', 'sass-loader', {
+            'vue-style-loader', {
+                loader: 'css-loader',
+                options: {modules: true}
+            }, 'sass-loader', {
                 loader: 'sass-resources-loader',
                 options: {
                     resources: [

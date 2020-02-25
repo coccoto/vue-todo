@@ -1,3 +1,5 @@
+<style module src='@/app/styles/components/molecules/todo.sass'></style>
+
 <script>
 import Vue from 'vue'
 import Button from '@/app/components/atoms/button.vue'
@@ -21,11 +23,13 @@ export default Vue.extend ({
 </script>
 
 <template>
-    <div>
+    <div :class='$style.container'>
         <List ref='refList'></List>
-        <Button
-            v-on:handleSubmit='todoHandleSubmit'
-            :label='label'
-        ></Button>
+        <div :class='$style.wrapper'>
+            <Button
+                v-on:handleSubmit='todoHandleSubmit'
+                :label='label'
+            ></Button>
+        </div>
     </div>
 </template>

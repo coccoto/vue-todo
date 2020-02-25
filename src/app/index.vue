@@ -1,3 +1,5 @@
+<style module src='@/app/styles/index.sass'></style>
+
 <script>
 import Vue from 'vue'
 import Form from '@/app/components/molecules/form.vue'
@@ -17,14 +19,16 @@ export default Vue.extend ({
 </script>
 
 <template>
-    <div>
-        <Form
-            v-on:formHandleSubmit='formHandleSubmit'
-            label='add'
-        ></Form>
-        <Todo
-            ref='refTodo'
-            label='delete'
-        ></Todo>
+    <div :class='$style.container'>
+        <div :class='$style.wrapper'>
+            <Form
+                v-on:formHandleSubmit='formHandleSubmit'
+                label='＋'
+            ></Form>
+            <Todo
+                ref='refTodo'
+                label='－'
+            ></Todo>
+        </div>
     </div>
 </template>

@@ -1,3 +1,5 @@
+<style module src='@/app/styles/components/atoms/item.sass'></style>
+
 <script>
 import Vue from 'vue'
 
@@ -10,11 +12,14 @@ export default Vue.extend ({
     methods: {
         formHandleSubmit() {
             this.$emit('formHandleSubmit', this.value)
+            this.value = ''
         }
     }
 })
 </script>
 
 <template>
-    <input v-model='value'>
+    <input
+        :class='$style.input'
+        v-model='value'>
 </template>
