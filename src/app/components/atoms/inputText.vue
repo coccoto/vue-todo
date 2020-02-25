@@ -1,4 +1,4 @@
-<style module src='@/app/styles/components/atoms/enter.sass'></style>
+<style module src='@/app/styles/components/atoms/inputText.sass'></style>
 
 <script>
 import Vue from 'vue'

@@ -3,17 +3,17 @@
 <script>
 import Vue from 'vue'
 import Button from '@/app/components/atoms/button.vue'
-import Enter from '@/app/components/atoms/enter.vue'
+import InputText from '@/app/components/atoms/InputText.vue'
 
 export default Vue.extend ({
     props: ['label'],
     components: {
         Button,
-        Enter
+        InputText
     },
     methods: {
-        callRefEnter() {
-            this.$refs.refEnter.formHandleSubmit()
+        callRefInputText() {
+            this.$refs.refInputText.formHandleSubmit()
         },
         formHandleSubmit(value) {
             this.$emit('formHandleSubmit', value)
@@ -24,12 +24,12 @@ export default Vue.extend ({
 
 <template>
     <div :class='$style.container'>
-        <Enter
-            ref='refEnter'
+        <InputText
+            ref='refInputText'
             v-on:formHandleSubmit='formHandleSubmit'>
-        </Enter>
+        </InputText>
         <Button
-            v-on:handleSubmit='callRefEnter'
+            v-on:handleSubmit='callRefInputText'
             :label='label'
         ></Button>
     </div>
