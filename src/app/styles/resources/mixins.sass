@@ -1,0 +1,24 @@
+@mixin Media($width: 960px)
+    @media screen and (min-width: $width)
+        @content
+
+@mixin Grid($flag: null)
+    display: grid
+    justify-items: center
+    align-items: center
+
+    @if $flag == 3
+        grid-template-columns: 40% 20% 40%
+        width: 90%
+
+        @include Media
+            min-width: 28rem
+            width: 30%
+
+    @else if $flag == 5
+        grid-template-columns: 30% 5% 30% 5% 30%
+        width: 90%
+
+        @include Media
+            min-width: 28rem
+            width: 30%
