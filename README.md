@@ -1,3 +1,0 @@
-# vue-todo
-
-vue practice.
