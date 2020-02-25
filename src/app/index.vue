@@ -12,7 +12,7 @@ export default Vue.extend ({
     },
     methods: {
         formHandleSubmit(value) {
-            this.$refs.refTodo.formHandleSubmit(value)
+            this.$refs.todoRef.formHandleSubmit(value)
         }
     }
 })
@@ -26,7 +26,7 @@ export default Vue.extend ({
                 label='＋'
             ></Form>
             <Todo
-                ref='refTodo'
+                ref='todoRef'
                 label='－'
             ></Todo>
         </div>

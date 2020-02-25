@@ -12,8 +12,8 @@ export default Vue.extend ({
         InputText
     },
     methods: {
-        callRefInputText() {
-            this.$refs.refInputText.formHandleSubmit()
+        callInputText() {
+            this.$refs.inputTextRef.formHandleSubmit()
         },
         formHandleSubmit(value) {
             this.$emit('formHandleSubmit', value)
@@ -25,11 +25,11 @@ export default Vue.extend ({
 <template>
     <div :class='$style.container'>
         <InputText
-            ref='refInputText'
+            ref='inputTextRef'
             v-on:formHandleSubmit='formHandleSubmit'>
         </InputText>
         <Button
-            v-on:handleSubmit='callRefInputText'
+            v-on:handleSubmit='callInputText'
             :label='label'
         ></Button>
     </div>

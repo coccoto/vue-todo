@@ -13,10 +13,10 @@ export default Vue.extend ({
     },
     methods: {
         formHandleSubmit(value) {
-            this.$refs.refList.add(value)
+            this.$refs.listRef.add(value)
         },
         todoHandleSubmit() {
-            this.$refs.refList.delete()
+            this.$refs.listRef.delete()
         }
     }
 })
@@ -24,7 +24,7 @@ export default Vue.extend ({
 
 <template>
     <div :class='$style.container'>
-        <List ref='refList'></List>
+        <List ref='listRef'></List>
         <div :class='$style.wrapper'>
             <Button
                 v-on:handleSubmit='todoHandleSubmit'
