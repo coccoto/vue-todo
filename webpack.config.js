@@ -2,15 +2,21 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
+const ENTRY_FILE = 'index.jsx'
+const BUNDLE_FILE = 'index.js'
+
+const SOURCE = path.resolve(__dirname, 'src')
+const OUTPUT = path.resolve(__dirname, 'dist')
+
 module.exports = () => {
 
     return {
         entry: {
-            index: path.resolve(__dirname, 'src', 'index.js')
+            index: path.resolve(SOURCE, ENTRY_FILE)
         },
         output: {
-            path: path.resolve(__dirname, 'dist'),
-            filename: 'index.js'
+            path: path.resolve(OUTPUT),
+            filename: BUNDLE_FILE
         },
         devtool: 'source-map',
         resolve: {
@@ -20,12 +26,12 @@ module.exports = () => {
             ],
             alias: {
                 'vue': 'vue/dist/vue.esm.js',
-                '@': path.resolve(__dirname, 'src')
+                '@': path.resolve(SOURCE)
             }
         },
         devServer: {
             open: true,
-            contentBase: path.resolve(__dirname, 'dist'),
+            contentBase: path.resolve(OUTPUT),
             watchContentBase: true,
             historyApiFallback: true,
         },
@@ -34,7 +40,7 @@ module.exports = () => {
         },
         plugins: [
             new HtmlWebpackPlugin({
-                template: path.resolve(__dirname, 'src', 'index.html')
+                template: path.resolve(SOURCE, 'index.html')
             }),
             new VueLoaderPlugin()
         ],
@@ -59,7 +65,7 @@ const rules = [
                 loader: 'sass-resources-loader',
                 options: {
                     resources: [
-                        (path.resolve(__dirname, 'src', 'app', 'styles', 'resources', '*'))
+                        (path.resolve(SOURCE, 'app', 'styles', 'resources', '*'))
                     ]
                 }
             }
